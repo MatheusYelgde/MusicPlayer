@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import Loading from '../pages/Loading';
 import { getUser } from '../services/userAPI';
 
 class Header extends Component {
+  state = {
+    isLoading: true,
+  };
+
   userName = async () => {
     await getUser();
   };
@@ -10,7 +15,8 @@ class Header extends Component {
     return (
       <header data-testid="header-component">
         <p data-testid="header-user-name">
-          { this.userName }
+          { this.userName() }
+          {/* {isLoading? <Loading /> : } */}
         </p>
       </header>
     );

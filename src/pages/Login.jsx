@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { createUser } from '../services/userAPI';
+import Loading from './Loading';
 
 class Login extends Component {
   state = {
     isSaveButtonDisabled: true,
     isLoading: false,
+    loginName: '',
   };
 
   goToSearch = async () => {
-    const { history, loginName } = this.props;
+    const { history } = this.props;
+    const { loginName } = this.state;
     this.setState({
       isLoading: true,
     });
@@ -30,27 +33,35 @@ class Login extends Component {
         isSaveButtonDisabled: true,
       });
     }
+    this.setState({
+      loginName: value,
+    });
   };
 
   render() {
     const { isSaveButtonDisabled, isLoading } = this.state;
     return (
       <div data-testid="page-login">
-        <label htmlFor="name">
-          <input
-            data-testid="login-name-input"
-            type="text"
-            id="name"
-            onChange={ this.validation }
-          />
-        </label>
-        <button
-          type="button"
-          disabled={ isSaveButtonDisabled }
-          onClick={ this.goToSearch }
-        >
-          {isLoading ? 'Carregando...' : 'Entrar'}
-        </button>
+        {isLoading ? <Loading /> : (
+          <div>
+            <label htmlFor="name">
+              <input
+                data-testid="login-name-input"
+                type="text"
+                id="name"
+                onChange={ this.validation }
+              />
+            </label>
+            <button
+              data-testid="login-submit-button"
+              type="button"
+              disabled={ isSaveButtonDisabled }
+              onClick={ this.goToSearch }
+            >
+              Entrar
+            </button>
+          </div>
+        )}
       </div>
     );
   }
