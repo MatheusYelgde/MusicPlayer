@@ -5,19 +5,30 @@ import { getUser } from '../services/userAPI';
 class Header extends Component {
   state = {
     isLoading: true,
+    getName: '',
   };
 
+  componentDidMount() {
+    this.userName();
+  }
+
   userName = async () => {
-    await getUser();
+    const { name } = await getUser();
+    this.setState({
+      getName: name,
+      isLoading: false,
+    });
   };
 
   render() {
+    const { isLoading, getName } = this.state;
     return (
       <header data-testid="header-component">
-        <p data-testid="header-user-name">
-          { this.userName() }
-          {/* {isLoading? <Loading /> : } */}
-        </p>
+        { isLoading ? (<Loading />)
+          : (
+            <p data-testid="header-user-name">
+              {getName}
+            </p>)}
       </header>
     );
   }
