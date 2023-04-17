@@ -15,7 +15,6 @@ class Album extends Component {
   musicList = async () => {
     const { id } = this.props.match.params;
     const albumInfos = await getMusics(id);
-    console.log(albumInfos);
     this.setState({
       albumInfos,
     });
