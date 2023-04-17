@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
@@ -19,8 +20,7 @@ class MusicCard extends Component {
     });
   };
 
-  favoriteSong = async (event) => {
-    const { favoriteSongs } = this.state;
+  favoriteSong = async () => {
     const { albumInfo } = this.props;
     this.setState({
       isLoading: true,
@@ -71,5 +71,9 @@ class MusicCard extends Component {
     );
   }
 }
+
+MusicCard.propTypes = {
+  albumInfo: PropTypes.string.isRequired,
+};
 
 export default MusicCard;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
@@ -13,7 +14,7 @@ class Album extends Component {
   }
 
   musicList = async () => {
-    const { id } = this.props.match.params;
+    const { match: { params: { id } } } = this.props;
     const albumInfos = await getMusics(id);
     this.setState({
       albumInfos,
@@ -38,5 +39,9 @@ class Album extends Component {
     );
   }
 }
+
+Album.propTypes = {
+  match: PropTypes.string.isRequired,
+};
 
 export default Album;

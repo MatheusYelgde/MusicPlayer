@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
-import { getUser } from '../services/userAPI';
 
 class ProfileEdit extends Component {
   render() {
