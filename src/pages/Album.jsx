@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
+import '../css/Album.css';
 
 class Album extends Component {
   state = {
@@ -26,9 +27,11 @@ class Album extends Component {
     const firstAlbumInfo = albumInfos.length > 0 ? albumInfos[0] : {};
     return (
       <div data-testid="page-album">
-        <Header />
-        <h1 data-testid="artist-name">{firstAlbumInfo.artistName}</h1>
-        <h2 data-testid="album-name">{firstAlbumInfo.collectionName}</h2>
+        <div className='line'>
+          <Header />
+          <h1 className="artist" data-testid="artist-name">{firstAlbumInfo.artistName}</h1>
+          <h2 className="album" data-testid="album-name">{firstAlbumInfo.collectionName}</h2>
+        </div>
         <ul>
           {albumInfos.filter((albumInfo) => albumInfo.kind === 'song')
             .map((albumInfo, idx) => (

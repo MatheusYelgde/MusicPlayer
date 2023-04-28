@@ -1,0 +1,79 @@
+.page {
+  background-color: #F5F9E9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.godfather_div {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.label_container {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  height: 36px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #E5E5E5;
+  background-color: #F5F5F5;
+  outline: none;
+}
+
+input:focus {
+  border-color: #D36135;
+}
+
+button {
+  margin-left: 65px;
+  width: 200px;
+  padding: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #D36135;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  opacity: 0.5;
+}
+
+button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  transition: 0.8s;
+  background-color: #BA4E20;
+  cursor: pointer;
+}
+
+.title {
+  text-align: center;
+  font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  .godfather_div {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
+  }
+  
+  .label_login {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+}

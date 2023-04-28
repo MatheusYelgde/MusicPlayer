@@ -1,0 +1,86 @@
+body {
+    background-color: #f0edee;
+  }
+  
+  .page-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  
+  .search-button {
+    margin-left: 10px;
+  }
+  
+  header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-right: 30px;
+  }
+
+  .album-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+  
+  .album-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 250px;
+    height: 340px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .album-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .album-item img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .album-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  

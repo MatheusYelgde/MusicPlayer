@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import SignUp from '../css/SignUp.css';
 
 class Login extends Component {
   state = {
@@ -42,28 +43,21 @@ class Login extends Component {
   render() {
     const { isSaveButtonDisabled, isLoading } = this.state;
     return (
-      <div data-testid="page-login">
-        {isLoading ? <Loading /> : (
-          <div>
-            <label htmlFor="name">
-              <input
-                data-testid="login-name-input"
-                type="text"
-                id="name"
-                onChange={ this.validation }
-              />
-            </label>
-            <button
-              data-testid="login-submit-button"
-              type="button"
-              disabled={ isSaveButtonDisabled }
-              onClick={ this.goToSearch }
-            >
-              Entrar
-            </button>
-          </div>
-        )}
-      </div>
+      <div class="page" data-testid="page-login">
+      {isLoading ? <Loading /> : (
+        <div class="container">
+          <h1 class="title">Bem-vindo!</h1>
+          <form class="form" action="#">
+            <div class="form-control">
+              <label for="name" class="label" />
+              <input type="text" id="name" placeholder="Digite seu nome" onChange={ this.validation } required />
+            </div>
+            <button type="submit" class="button" onClick={ this.goToSearch } disabled={isSaveButtonDisabled}>Entrar</button>
+          </form>
+        </div>
+      )}
+    </div>
+    
     );
   }
 }

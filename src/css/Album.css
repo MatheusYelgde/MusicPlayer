@@ -1,0 +1,17 @@
+
+.artist { 
+    font-family: monospace;
+    text-align: center;
+    font-size: 50px;
+}
+
+.album { 
+    font-family: monospace;
+    text-align: center;
+    font-size: 30px;
+}
+
+.line {
+    background-color: WHITE;
+    border: 1px solid #D36135;
+}
